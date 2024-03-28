@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet69" targetNamespace="http://tempuri.org/DataSet69.xsd" xmlns:mstns="http://tempuri.org/DataSet69.xsd" xmlns="http://tempuri.org/DataSet69.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pms" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pms (Settings)" PropertyReference="ApplicationSettings.FullScreenAppDemo.Properties.Settings.GlobalReference.Default.pms" Provider="System.Data.SQLite.EF6" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TakeOutTableAdapter" GeneratorDataComponentClassName="TakeOutTableAdapter" Name="TakeOutDataTable" UserDataComponentName="TakeOutTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pms (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select take_out_details.take_id, take_out.service_, medicaments.primary_name,medicaments.secondary_name,take_out_details.quantity from ((take_out_details
+INNER JOIN take_out ON take_out.take_id = take_out_details.take_id)
+INNER JOIN medicaments ON medicaments.id_med = take_out_details.id_med)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="take_id" DataSetColumn="take_id" />
+              <Mapping SourceColumn="service_" DataSetColumn="service_" />
+              <Mapping SourceColumn="primary_name" DataSetColumn="primary_name" />
+              <Mapping SourceColumn="secondary_name" DataSetColumn="secondary_name" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RestockTableAdapter" GeneratorDataComponentClassName="RestockTableAdapter" Name="RestockDataTable" UserDataComponentName="RestockTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pms (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        restock_details.restock_id, restock_details.source_, medicaments.primary_name, medicaments.secondary_name, restock_details.quantity
+FROM            restock_details, medicaments
+WHERE        (medicaments.id_med = restock_details.id_med)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="restock_id" DataSetColumn="restock_id" />
+              <Mapping SourceColumn="source_" DataSetColumn="source_" />
+              <Mapping SourceColumn="primary_name" DataSetColumn="primary_name" />
+              <Mapping SourceColumn="secondary_name" DataSetColumn="secondary_name" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet69" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet69" msprop:Generator_UserDSName="DataSet69">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TakeOutDataTable" msprop:Generator_TableClassName="TakeOutDataTableDataTable" msprop:Generator_TableVarName="tableTakeOutDataTable" msprop:Generator_TablePropName="TakeOutDataTable" msprop:Generator_RowDeletingName="TakeOutDataTableRowDeleting" msprop:Generator_RowChangingName="TakeOutDataTableRowChanging" msprop:Generator_RowEvHandlerName="TakeOutDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TakeOutDataTableRowDeleted" msprop:Generator_UserTableName="TakeOutDataTable" msprop:Generator_RowChangedName="TakeOutDataTableRowChanged" msprop:Generator_RowEvArgName="TakeOutDataTableRowChangeEvent" msprop:Generator_RowClassName="TakeOutDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="take_id" msprop:Generator_ColumnVarNameInTable="columntake_id" msprop:Generator_ColumnPropNameInRow="take_id" msprop:Generator_ColumnPropNameInTable="take_idColumn" msprop:Generator_UserColumnName="take_id" type="xs:int" />
+              <xs:element name="service_" msprop:Generator_ColumnVarNameInTable="columnservice_" msprop:Generator_ColumnPropNameInRow="service_" msprop:Generator_ColumnPropNameInTable="service_Column" msprop:Generator_UserColumnName="service_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="primary_name" msprop:Generator_ColumnVarNameInTable="columnprimary_name" msprop:Generator_ColumnPropNameInRow="primary_name" msprop:Generator_ColumnPropNameInTable="primary_nameColumn" msprop:Generator_UserColumnName="primary_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="secondary_name" msprop:Generator_ColumnVarNameInTable="columnsecondary_name" msprop:Generator_ColumnPropNameInRow="secondary_name" msprop:Generator_ColumnPropNameInTable="secondary_nameColumn" msprop:Generator_UserColumnName="secondary_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RestockDataTable" msprop:Generator_TableClassName="RestockDataTableDataTable" msprop:Generator_TableVarName="tableRestockDataTable" msprop:Generator_RowChangedName="RestockDataTableRowChanged" msprop:Generator_TablePropName="RestockDataTable" msprop:Generator_RowDeletingName="RestockDataTableRowDeleting" msprop:Generator_RowChangingName="RestockDataTableRowChanging" msprop:Generator_RowEvHandlerName="RestockDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RestockDataTableRowDeleted" msprop:Generator_RowClassName="RestockDataTableRow" msprop:Generator_UserTableName="RestockDataTable" msprop:Generator_RowEvArgName="RestockDataTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="restock_id" msprop:Generator_ColumnVarNameInTable="columnrestock_id" msprop:Generator_ColumnPropNameInRow="restock_id" msprop:Generator_ColumnPropNameInTable="restock_idColumn" msprop:Generator_UserColumnName="restock_id" type="xs:int" />
+              <xs:element name="source_" msprop:Generator_ColumnVarNameInTable="columnsource_" msprop:Generator_ColumnPropNameInRow="source_" msprop:Generator_ColumnPropNameInTable="source_Column" msprop:Generator_UserColumnName="source_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="120" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="primary_name" msprop:Generator_ColumnVarNameInTable="columnprimary_name" msprop:Generator_ColumnPropNameInRow="primary_name" msprop:Generator_ColumnPropNameInTable="primary_nameColumn" msprop:Generator_UserColumnName="primary_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="secondary_name" msprop:Generator_ColumnVarNameInTable="columnsecondary_name" msprop:Generator_ColumnPropNameInRow="secondary_name" msprop:Generator_ColumnPropNameInTable="secondary_nameColumn" msprop:Generator_UserColumnName="secondary_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
